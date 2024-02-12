@@ -1,0 +1,24 @@
+{% extends "herencia.html" %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
+    <title>CREAR UN NUEVO POSTEO</title>
+{% endblock %}
+
+{% block main%}
+    <main>
+        
+        <form action="/nuevo_post" method="POST">
+            <label for="username"> USERNAME:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="titulo"> TITULO:</label><br>
+            <input type="text" id="titulo" name="titulo"><br>
+            <label for="comentario"> COMENTARIO:</label><br>
+            <input type="text" id="comentario" name="comentario"><br>
+            <input type="submit" value="Crear nuevo posteo">
+        </form>
+        
+    </main>
+{% endblock%}

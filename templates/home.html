@@ -1,0 +1,32 @@
+{% extends "herencia.html" %}
+
+{% block head %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
+        <title>A dónde vamos?</title>
+    </head>
+{% endblock %}
+
+
+{% block main%}
+    <main>
+        <h2>POSTEOS</h2>
+        {% if posts %}
+            {% for post in posts %}
+                <div>
+                    <h3>Autor del post: {{ post.usuario }}</h3>
+                    <h4>{{ post.titulo }}</h4>
+                    <p>{{post.comentario}}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Por el momento ningun usuario subió un posteo</p>
+        {% endif %}
+
+        
+        
+    </main>
+{% endblock %}
+    

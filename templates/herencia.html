@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <div>
+            <h1 class="titulo"> A dónde vamos?</h1>
+        </div>
+        <div class="home">
+            <ul class="home_items">
+                <li><a href="/login">LOG IN</a></li>
+                <li><a href="/hacerca_de">HACERCA DE</a></li>
+                <li><a href="/nuevo_post">CREAR UN NUEVO POSTEO</a></li>
+            </ul>
+        </div>
+    </header>
+
+    {% block main%}
+    {% endblock%}
+
+    <footer>
+        <p>Hecho por {{nombre}}</p>
+    </footer>
+
+    
+</body>
+</html>
