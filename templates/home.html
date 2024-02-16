@@ -12,13 +12,19 @@
 
 {% block main%}
     <main>
+        <form action="/">
+            <input type="search" id="search" name="search"><br>
+            <button type="submit"> BUSCAR </button>
+        </form>
+        
         <h2>POSTEOS</h2>
+        
         {% if posts %}
             {% for post in posts %}
-                <div>
-                    <h3>Autor del post: {{ post.usuario }}</h3>
-                    <h4>{{ post.titulo }}</h4>
-                    <p>{{post.comentario}}</p>
+                <div class="posts">
+                    <h3>{{ post[2] }}</h3>
+                    <p>Autor del post: {{ post[1] }}</p>
+                    <a href="/post/{{post[0]}}">Leer post</a>
                 </div>
             {% endfor %}
         {% else %}

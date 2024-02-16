@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
-    <title>LOG IN</title>
+    <title>REGISTRO DE USUARIO</title>
 {% endblock %}
 
 {% block main%}
     <main>
-        
-        <form action="/login" method="POST">
+        <p>REGISTRO DE USUARIO</p>
+        <form action="/register" method="POST">
             <label for="username"> USERNAME:</label><br>
             <input type="text" id="username" name="username"><br>
             <label for="password"> PASSWORD:</label><br>

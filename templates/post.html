@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
-    <title>HACERCA DE</title>
+    <title>POSTEO</title>
 {% endblock %}
 
 {% block main%}
     <main>
         
-        Info hffhfhf 
+        <div>
+            <h3>Titulo: {{ post[2] }}</h3>
+            <p>Autor: {{ post[1] }}</p>
+        </div>
+        <div>
+            <p>{{post[3]}}</p>
+        </div>
+        <a href="/">Volver atras</a>
         
     </main>
 {% endblock%}
