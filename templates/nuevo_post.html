@@ -9,7 +9,8 @@
 
 {% block main%}
     <main>
-        
+        <h3>CREA UN NUEVO POSTEO</h3>
+        <div class="register_and_login">
         <form action="/nuevo_post" method="POST">
             <!-- <label for="autor"> AUTOR:</label><br>
             <input type="text" id="autor" name="autor"><br> -->
@@ -17,9 +18,10 @@
             <input type="text" id="titulo" name="titulo"><br>
             <label for="comentario"> COMENTARIO:</label><br>
             <input type="text" id="comentario" name="comentario"><br>
-            <input type="submit" value="Crear nuevo posteo">
+            <input type="submit" value="CREAR">
         </form>
         
         <p>{{error}}</p>
+        </div>
     </main>
 {% endblock%}

@@ -1,7 +1,8 @@
 h1 {
     color:rgb(250, 115, 66);
     text-align: center;
-    font-size: 40px;
+    font-size: 60px;
+    font-style: helvetica;
 }
 .home_items{
     display: flex;
@@ -11,10 +12,14 @@ h1 {
     border-bottom: solid 1px;
     border-color: cornflowerblue;
     margin-bottom: 10px;
+    border-top: solid 1px;
+    border-color: cornflowerblue;
+    margin-top: 10px;
 }
 h2{
     color: rgb(250, 115, 66);
     text-align: center;
+    font-size: 30px;
 }
 .posts{
     box-shadow: 10px 8px 0px 16px rgba(2,167,176,0.36);
@@ -22,4 +27,27 @@ h2{
     -moz-box-shadow: 10px 8px 0px 16px rgba(2,167,176,0.36);
     margin: 40px 20px 20px 20px;
     padding: 10px;
+}
+h4{
+    font-size: 20px;
+    text-align: center;
+}
+.text{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+h3{
+    font-size: 20px;
+    margin-left: 40px;
+}
+.register_and_login{
+    margin-left: 55px;
+}
+.search{
+    margin-top: 20px;
+}
+h5{
+    border-top: solid 1px;
+    border-color: cornflowerblue;
+
 }

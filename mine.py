@@ -2,6 +2,7 @@ from collections import UserString
 import sqlite3
 
 from flask import Flask, render_template, request, redirect, url_for, session
+from valid_form import valid_form
 
 app = Flask(__name__)
 app.secret_key = "blog_key"
@@ -133,11 +134,14 @@ def new_user():
         username = request.form["username"]
         password = request.form["password"]
 
-        if not username or not password:
-            return render_template("register.html" , nombre="Maria" , error = "El username y password son obligatorios")
+        # if not username or not password:
+        #     return render_template("register.html" , nombre="Maria" , error = "El username y password son obligatorios")
         
-        if len(password) < 6 : 
-            return render_template("register.html" , nombre="Maria" , error = "Password debe contener al menos 6 caracteres")
+        # if len(password) < 6 : 
+        #     return render_template("register.html" , nombre="Maria" , error = "Password debe contener al menos 6 caracteres")
+
+        if not valid_form(username=username , password=password):
+            return render_template("register.html", nombre = "Maria", error="Ocurrio un error. Valide sus datos nuevamente")
 
         conn, cursor = get_db_connection()
         cursor.execute("SELECT * FROM users WHERE users.username == ?",(username,))

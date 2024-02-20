@@ -9,7 +9,8 @@
 
 {% block main%}
     <main>
-        
+        <h3>LOGIN</h3>
+        <div class="register_and_login">
         <form action="/login" method="POST">
             <label for="username"> USERNAME:</label><br>
             <input type="text" id="username" name="username"><br>
@@ -21,6 +22,6 @@
         <p>{{error}}</p>
 
         <p> No tenes usuario? Registrate <a href={{url_for('new_user')}}> aqui</a></p>
-
+        </div>
     </main>
 {% endblock%}

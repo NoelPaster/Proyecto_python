@@ -9,16 +9,22 @@
 
 {% block main%}
     <main>
-        <p>REGISTRO DE USUARIO</p>
+        <h3>REGISTRO DE USUARIO</h3>
+        <div class="register_and_login">
         <form action="/register" method="POST">
             <label for="username"> USERNAME:</label><br>
             <input type="text" id="username" name="username"><br>
-            <label for="password"> PASSWORD:</label><br>
+            <label for="password"> PASSWORD*:</label><br>
             <input type="password" id="password" name="password"><br>
             <input type="submit" value="Enviar">
         </form>
+        <p>*Password debe contener al menos 6 caracteres</p>
+        
+        
         
         <p>{{error}}</p>
+        </div>
+        
 
         
 
