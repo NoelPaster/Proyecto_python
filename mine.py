@@ -12,30 +12,6 @@ def get_db_connection():
     cursor = conn.cursor()
     return conn, cursor
 
-#Falsa base de datos de posts
-# posts= [
-#    {"id": 1 , "usuario": "Maria" , "comentario": "comentario1" , "titulo": "titulo1"},
-#    {"id": 2 , "usuario": "Noel" , "comentario": "comentario2" , "titulo": "titulo2"}
-# ]
-
-#Falsa base de datos de users
-# users= [
-#    {"username": "mnoel" , "password": "noel.1"},
-#    {"username": "noelpaster" , "password": "123paster"}
-# ]
-
-#Ruta a home donde visualizar todos los posts con base de datos falsa
-# @app.route('/')
-# def home():
-#     buscar= request.args.get("search")
-#     if buscar:
-#         # list_post=[]
-#         # for post in posts:
-#         #     if buscar.lower() in post["titulo"].lower():
-#         #         list_post.append(post)
-#         # return render_template("home.html", nombre="Maria", posts=list_post)
-#     else:
-#         return render_template("home.html", nombre="Maria", posts=posts)
 
 #Ruta donde visualizar todos los post y  poder buscarlos por titulo con sqlite
 @app.route('/')
@@ -59,14 +35,6 @@ def acerca_de():
     return render_template("acerca_de.html", nombre="Maria Noel Paster Mercedes")
 
 
-# #Ruta para visualizar post por id con base de datos falsa
-# @app.route('/post/<int:id>')
-# def post_id(id):
-#     for post in posts:
-#        if post["id"] == id:
-#             return render_template("post.html", nombre="Maria", post = post)
-#     return "ok"
-
 #Ruta para visualizar post por id con sqlite
 @app.route('/post/<id>')
 def post_id(id):
@@ -76,20 +44,6 @@ def post_id(id):
     conn.close()
     return render_template("post.html" , nombre = "Maria Noel Paster Mercedes" , post=post)
 
-#Ruta para login con base de datos falsa. El metodo get nos muestra el formulario y el metodo post procesa los datos ingresados
-# @app.route('/login', methods= ["GET" , "POST"])
-# def login():
-#     if request.method == "GET":
-#         return render_template("login.html", nombre="Maria")
-#     elif request.method == "POST":
-#         for user in users:
-#             if user['username'] == request.form['username'] and user['password'] == request.form['password']:
-#                 return 'login con exito'
-#             else:
-#                 return render_template("login.html" , error= "usuario o contrasena incorrecto")
-        
-        #print(request.form)
-        #return redirect('/')
 
 #Ruta para login con sqlite. El metodo get nos muestra el formulario y el metodo post procesa los datos ingresados
 @app.route('/login', methods= ["GET" , "POST"])
@@ -109,21 +63,6 @@ def login():
         else:
             return render_template("login.html" , nombre = "Maria Noel Paster Mercedes" , error= "Usuario o contraseña incorrecto")
 
-#Ruta para registrar un usuario nuevo con base de datos falsa
-# @app.route('/register' , methods=["GET" , "POST"])
-# def register():
-#     if request.method == "GET":
-#         return render_template("register.html" , nombre="Maria")
-#     elif request.method == "POST":
-#             user_exist = list(filter(lambda user: user['username'] == request.form ['username'] , users))
-#             if user_exist:
-#                 return render_template("register.html" , nombre="Maria" , error = "El usuario ya esta registrado")
-#             new_id = users[-1]["id"] +1
-#             print(new_id)
-#             new_user = {"id": new_id , "username": request.form['username'] , "pasword": request.form['password']}
-#             users.append(new_user)
-#             print(users)
-#             return "ok"
 
 #Ruta para registrar un usuario nuevo con sqlite
 @app.route('/register' , methods=["GET" , "POST"])
@@ -133,12 +72,6 @@ def new_user():
     elif request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
-
-        # if not username or not password:
-        #     return render_template("register.html" , nombre="Maria" , error = "El username y password son obligatorios")
-        
-        # if len(password) < 6 : 
-        #     return render_template("register.html" , nombre="Maria" , error = "Password debe contener al menos 6 caracteres")
 
         if not valid_form(username=username , password=password):
             return render_template("register.html", nombre = "Maria Noel Paster Mercedes", error="Ocurrio un error. Valide sus datos nuevamente")
@@ -154,14 +87,6 @@ def new_user():
         conn.close()
     return redirect('/login')
 
-# #Ruta para crear un nuevo post. El metodo get nos muestra el formulario y el metodo post procesa los datos ingresados
-# @app.route('/nuevo_post', methods= ["GET" , "POST"])
-# def nuevo_post():
-#     if request.method == "GET":
-#         return render_template("nuevo_post.html", nombre="Maria")
-#     elif request.method == "POST":
-#         print(request.form)
-#         return "gracias por el nuevo post"
 
 #Ruta para crear un nuevo post con sqlite.   
 @app.route('/nuevo_post' , methods=["GET" , "POST"])
@@ -184,7 +109,9 @@ def nuevo_post():
             return redirect('/')
         else:
             return render_template("nuevo_post.html" , nombre="Maria Noel Paster Mercedes" , error= "Todos los campos son obligatorios")
-   
+
+
+#Ruta para cerrar sesion
 @app.route('/logout')
 def logout():
     username = session.get("username")
