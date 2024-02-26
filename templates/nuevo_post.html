@@ -9,19 +9,27 @@
 
 {% block main%}
     <main>
-        <h3>CREA UN NUEVO POSTEO</h3>
+        <h1 class="all_titles">CREA UN NUEVO POSTEO</h1>
+
         <div class="register_and_login">
-        <form action="/nuevo_post" method="POST">
-            <!-- <label for="autor"> AUTOR:</label><br>
-            <input type="text" id="autor" name="autor"><br> -->
-            <label for="titulo"> TITULO:</label><br>
-            <input type="text" id="titulo" name="titulo"><br>
-            <label for="comentario"> COMENTARIO:</label><br>
-            <input type="text" id="comentario" name="comentario"><br>
-            <input type="submit" value="CREAR">
-        </form>
-        
-        <p>{{error}}</p>
+            <div class="r_and_l_items">
+                <form action="/nuevo_post" method="POST">
+                    <!-- <label for="autor"> AUTOR:</label><br>
+                    <input type="text" id="autor" name="autor"><br> -->
+                    <label for="titulo"> TITULO*:</label><br>
+                    <input type="text" id="titulo" name="titulo"><br>
+                    <label for="comentario"> COMENTARIO**:</label><br>
+                    <input style="width: 50%;" type="text" id="comentario" name="comentario"><br>
+                    <input type="submit" value="CREAR">
+                    <p class="error">{{error}}</p>
+                </form>
+            </div>
         </div>
+            <div class="p_new_post">
+                <p>*Nombra el país, la ciudad o utiliza "TIP" si quieres dejar algún consejo general sobre viajes.</p><br>
+                <p>**Deja una reseña sobre dicho lugar, los pro y los contras. Cuanto más detallada mejor!</p><br>
+                <p>Tambien puedes contarnos alguna anéctoda. <strong>Los viajes se viven tres veces: cuando se planean, durante el viaje y cuando los recordamos.</strong></p>
+                
+            </div>
     </main>
 {% endblock%}

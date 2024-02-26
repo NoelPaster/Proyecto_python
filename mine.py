@@ -46,17 +46,17 @@ def home():
         cursor.execute("SELECT * FROM posts WHERE posts.titulo LIKE ?" , (f"%{buscar}%",))
         posts = cursor.fetchall()
         conn.close
-        return render_template("home.html" , nombre = "Maria" , posts=posts)
+        return render_template("home.html" , nombre = "Maria Noel Paster Mercedes" , posts=posts)
     cursor.execute("SELECT * FROM posts")
     posts = cursor.fetchall()
     conn.close
-    return render_template("home.html" , nombre = "Maria" , posts=posts)
+    return render_template("home.html" , nombre = "Maria Noel Paster Mercedes" , posts=posts)
 
 
 #Ruta estatica a info del blog
 @app.route('/acerca_de')
 def acerca_de():
-    return render_template("acerca_de.html", nombre="Maria")
+    return render_template("acerca_de.html", nombre="Maria Noel Paster Mercedes")
 
 
 # #Ruta para visualizar post por id con base de datos falsa
@@ -74,7 +74,7 @@ def post_id(id):
     cursor.execute("SELECT * FROM posts WHERE posts.id == ?" , id)
     post = cursor.fetchone()
     conn.close()
-    return render_template("post.html" , nombre = "Maria" , post=post)
+    return render_template("post.html" , nombre = "Maria Noel Paster Mercedes" , post=post)
 
 #Ruta para login con base de datos falsa. El metodo get nos muestra el formulario y el metodo post procesa los datos ingresados
 # @app.route('/login', methods= ["GET" , "POST"])
@@ -95,7 +95,7 @@ def post_id(id):
 @app.route('/login', methods= ["GET" , "POST"])
 def login():
     if request.method == "GET":
-        return render_template("login.html", nombre="Maria")
+        return render_template("login.html", nombre="Maria Noel Paster Mercedes")
     elif request.method == "POST":            
         username = request.form["username"]
         password = request.form["password"]
@@ -107,7 +107,7 @@ def login():
             session['username'] = username
             return redirect('/')
         else:
-            return render_template("login.html" , nombre = "Maria" , error= "Usuario o contrasena incorrecto")
+            return render_template("login.html" , nombre = "Maria Noel Paster Mercedes" , error= "Usuario o contraseña incorrecto")
 
 #Ruta para registrar un usuario nuevo con base de datos falsa
 # @app.route('/register' , methods=["GET" , "POST"])
@@ -129,7 +129,7 @@ def login():
 @app.route('/register' , methods=["GET" , "POST"])
 def new_user():
     if request.method == "GET":
-        return render_template("register.html" , nombre="Maria")
+        return render_template("register.html" , nombre="Maria Noel Paster Mercedes")
     elif request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
@@ -141,13 +141,13 @@ def new_user():
         #     return render_template("register.html" , nombre="Maria" , error = "Password debe contener al menos 6 caracteres")
 
         if not valid_form(username=username , password=password):
-            return render_template("register.html", nombre = "Maria", error="Ocurrio un error. Valide sus datos nuevamente")
+            return render_template("register.html", nombre = "Maria Noel Paster Mercedes", error="Ocurrio un error. Valide sus datos nuevamente")
 
         conn, cursor = get_db_connection()
         cursor.execute("SELECT * FROM users WHERE users.username == ?",(username,))
         user_exist = cursor.fetchone()
         if user_exist:
-            return render_template("register.html" , nombre="Maria" , error = "El usuario ya existe") 
+            return render_template("register.html" , nombre="Maria Noel Paster Mercedes" , error = "El usuario ya existe") 
 
         cursor.execute("INSERT INTO users (username , password) VALUES (? , ?)" , (username , password))
         conn.commit()
@@ -169,8 +169,8 @@ def nuevo_post():
     if request.method == "GET":
         username = session.get("username")
         if not username:
-            return render_template("login.html" , error = "Debe de inciar sesion")
-        return render_template("nuevo_post.html" , nombre="Maria")
+            return render_template("login.html" , error = "Debe de inciar sesión")
+        return render_template("nuevo_post.html" , nombre="Maria Noel Paster Mercedes")
     elif request.method == "POST":
         username = session.get("username")
         autor = username
@@ -183,13 +183,13 @@ def nuevo_post():
             conn.close()
             return redirect('/')
         else:
-            return render_template("nuevo_post.html" , nombre="Maria" , error= "Todos los campos son obligatorios")
+            return render_template("nuevo_post.html" , nombre="Maria Noel Paster Mercedes" , error= "Todos los campos son obligatorios")
    
 @app.route('/logout')
 def logout():
     username = session.get("username")
     if not username:
-        return render_template("login.html" , error="Debe de iniciar sesion")
+        return render_template("login.html" , error="Debe de iniciar sesión")
     session.pop("username",None)
     return redirect('/')
 

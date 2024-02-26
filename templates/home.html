@@ -13,24 +13,30 @@
 {% block main%}
     <main>
         <div class="search">
-        <form action="/">
-            <input type="search" id="search" name="search">
-            <button type="submit"> BUSCAR </button>
-        </form>
+            <div class="search_button">
+                <form action="/">
+                    <input style= "width: 50%;" type="search" id="search" name="search" placeholder="Encontrá tu proximo destino">
+                    <button type="submit"> BUSCAR </button>
+                </form>
+            </div>
         </div>
         
-        <h2>POSTEOS</h2>
+        <h1 class="all_titles">POSTEOS</h1>
         
         {% if posts %}
             {% for post in posts %}
                 <div class="posts">
-                    <h3>{{ post[2] }}</h3>
-                    <p>Autor del post: {{ post[1] }}</p>
-                    <a href="/post/{{post[0]}}">Leer post</a>
+                    <h1 class="post_title">{{ post[2] }}</h1>
+                        <div class="post_info">
+                            <p>Por: {{ post[1] }}</p>
+                        </div>
+                            <div class="ref">
+                                <a href="/post/{{post[0]}}">Leer post</a>
+                            </div>
                 </div>
             {% endfor %}
         {% else %}
-            <p>Por el momento ningun usuario subió un posteo</p>
+            <p class="p">Por el momento ningun usuario subió un posteo</p>
         {% endif %}
 
         

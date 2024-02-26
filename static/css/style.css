@@ -1,53 +1,114 @@
-h1 {
-    color:rgb(250, 115, 66);
+.titulo_principal {
+    color:rgb(17, 13, 12);
     text-align: center;
-    font-size: 60px;
-    font-style: helvetica;
+    font-size: 60px ;
+    font-family: "Lucida Handwriting", monospace;
+    margin-bottom: 0px;
 }
+
+.titulo {
+    color:rgb(0, 0, 0);
+    text-align: center;
+    font-size: 22px;
+    font-family: "Courier New", monospace;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
 .home_items{
     display: flex;
     justify-content: space-around;
+    list-style-type: none;
 }
 .home{
     border-bottom: solid 1px;
     border-color: cornflowerblue;
-    margin-bottom: 10px;
     border-top: solid 1px;
     border-color: cornflowerblue;
     margin-top: 10px;
 }
-h2{
-    color: rgb(250, 115, 66);
+.all_titles{
+    color: black;
     text-align: center;
-    font-size: 30px;
+    font-size: 28px;
+    margin-top: 40px;
+    font-family: "Courier New", monospace;
 }
+
 .posts{
-    box-shadow: 10px 8px 0px 16px rgba(2,167,176,0.36);
-    -webkit-box-shadow: 10px 8px 0px 16px rgba(2,167,176,0.36);
-    -moz-box-shadow: 10px 8px 0px 16px rgba(2,167,176,0.36);
-    margin: 40px 20px 20px 20px;
+    box-shadow: 0px 0px 32px 9px rgba(6, 95, 83, 0.58);
+    -webkit-box-shadow: 0px 0px 32px 9px rgba(6, 95, 83, 0.58);
+    -moz-box-shadow: 0px 0px 32px 9px rgba(6, 95, 83, 0.58);
     padding: 10px;
+    margin: 60px 70px 50px 70px;
+    border-radius: 18px 18px 18px 18px;
+    -webkit-border-radius: 18px 18px 18px 18px;
+    -moz-border-radius: 18px 18px 18px 18px;
+
 }
-h4{
-    font-size: 20px;
-    text-align: center;
-}
+
 .text{
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 19px;
+    font-family: 'Courier New', Courier, monospace;
 }
-h3{
+.post_title{
     font-size: 20px;
     margin-left: 40px;
+    font-family: "Courier New", monospace;
+
+}
+.post_info{
+    font-family: "Courier New", monospace;
+    margin-left: 40px;
+
+}
+.ref{
+    margin-right: 40px;
+    text-align: end;
+    font-family: 'Courier New', Courier, monospace;
 }
 .register_and_login{
-    margin-left: 55px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.r_and_l_items{
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    line-height: 28px;
+}
+.p{
+    font-family: 'Courier New', Courier, monospace;
+}
+.p_new_post{
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 0;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 40px;
 }
 .search{
-    margin-top: 20px;
+    background-image: url("Captura.JPG");
+    background-size: 100%;
+    height: 300px;
+
 }
-h5{
+.search_button{
+    text-align: center;
+    padding-top: 150px;    
+    
+}
+.footer{
     border-top: solid 1px;
     border-color: cornflowerblue;
-
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+.error{
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
 }

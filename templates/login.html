@@ -9,19 +9,23 @@
 
 {% block main%}
     <main>
-        <h3>LOGIN</h3>
-        <div class="register_and_login">
-        <form action="/login" method="POST">
-            <label for="username"> USERNAME:</label><br>
-            <input type="text" id="username" name="username"><br>
-            <label for="password"> PASSWORD:</label><br>
-            <input type="password" id="password" name="password"><br>
-            <input type="submit" value="Enviar">
-        </form>
-        
-        <p>{{error}}</p>
+        <h1 class="all_titles">LOGIN</h1>
 
-        <p> No tenes usuario? Registrate <a href={{url_for('new_user')}}> aqui</a></p>
+        <div class="register_and_login">
+            <div class="r_and_l_items">    
+                <form action="/login" method="POST">
+                    <label for="username"> USUARIO:</label><br>
+                    <input type="text" id="username" name="username"><br>
+                    <label for="password"> CONTRASEÑA:</label><br>
+                    <input type="password" id="password" name="password"><br>
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+            <div class="p">
+                <p class="error">{{error}}</p>
+
+                <p> No tenes usuario? Registrate <a href={{url_for('new_user')}}> aqui</a></p>
+            </div>
         </div>
     </main>
 {% endblock%}
